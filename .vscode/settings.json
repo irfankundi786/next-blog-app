@@ -1,0 +1,6 @@
+{
+  "code-runner.executorMap": {
+    "javascript": "npm run dev"
+  },
+  "code-runner.runInTerminal": true
+}
