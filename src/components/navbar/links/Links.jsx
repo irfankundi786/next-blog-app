@@ -27,44 +27,41 @@ const links = [
     path: "/login",
   },
 ];
+
 const Links = () => {
   const [open, setOpen] = useState(false);
-  const sesseion = true;
+  const session = true; // Fixed typo
   const isAdmin = true;
-  console.log("isOpen" + open);
+
   return (
     <div className={styles.container}>
       <div className={styles.links}>
-        {links.map((link, index) => (
-          <NavLink item={link} />
+        {links.map((link) => (
+          <NavLink key={link.path} item={link} />
         ))}
-        {sesseion ? (
+        {session ? (
           <>
-            {isAdmin && <NavLink item={{ title: "admin", path: "/admin" }} />}
+            {isAdmin && (
+              <NavLink key="/admin" item={{ title: "admin", path: "/admin" }} />
+            )}
             <button className={styles.logout}>Logout</button>
           </>
         ) : (
-          <NavLink item={{ title: "login", path: "/login" }} />
+          <NavLink key="/login" item={{ title: "login", path: "/login" }} />
         )}
       </div>
       <Image
         className={styles.menuButton}
         src="/menu.png"
-        alt=""
+        alt="Menu"
         width={30}
         height={30}
         onClick={() => setOpen((prev) => !prev)}
       />
-      {/* <button
-        className={styles.menuButton}
-        onClick={() => setOpen((prev) => !prev)}
-      >
-        Menu
-      </button> */}
       {open && (
         <div className={styles.mobileLinks}>
           {links.map((link) => (
-            <NavLink item={link} key={link.path} />
+            <NavLink key={link.path} item={link} />
           ))}
         </div>
       )}
