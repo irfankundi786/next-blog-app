@@ -64,7 +64,7 @@ const Links = () => {
       {open && (
         <div className={styles.mobileLinks}>
           {links.map((link, index) => (
-            <NavLink item={link} key={index} />
+            <NavLink item={link} key={link.path} />
           ))}
         </div>
       )}
