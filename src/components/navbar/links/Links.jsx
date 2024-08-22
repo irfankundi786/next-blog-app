@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+
 import React, { useState } from "react";
 import styles from "./links.module.css";
 import NavLink from "./navLink/NavLink";
@@ -63,8 +63,8 @@ const Links = () => {
       </button> */}
       {open && (
         <div className={styles.mobileLinks}>
-          {links.map((link, index) => (
-            <NavLink item={link} key={index} />
+          {links.map((link) => (
+            <NavLink item={link} />
           ))}
         </div>
       )}

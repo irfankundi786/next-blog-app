@@ -2,16 +2,14 @@
 import { Post, User } from "./model";
 import { connectToDb } from "./util";
 import bcrypt from "bcrypt";
-import { signIn } from "./auth";
+
 import mongoose from "mongoose";
-import error from "@/app/error";
+
 import { revalidatePath } from "next/cache";
 
 export const addPost = async (formData) => {
   "use server";
-  //   const title = formData.get("title");
-  //   const desc = formData.get("desc");
-  //   const slug = formData.get("slug");
+
   const { title, desc, slug, userId, img } = formData;
 
   console.log("formData: ", title, desc, slug, userId, img);
@@ -107,7 +105,6 @@ export const login = async (prevState, formData) => {
 
     console.log("Login: successfully");
     return { user: "successfully login", isLogin: true }; // No need to serialize if you used .lean()
-    return { error: "successfully longin" };
   } catch (err) {
     console.error("Login failed", err.message); // Log only the message
     throw err; // Re-throw the error to handle it in the component

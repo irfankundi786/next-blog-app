@@ -1,10 +1,6 @@
 import React from "react";
 import { addPost, deletePost } from "@/lib/action";
 
-const testServer = async () => {
-  "use server";
-  console.log("This is a test server");
-};
 const ServerTest = () => {
   return (
     <div>

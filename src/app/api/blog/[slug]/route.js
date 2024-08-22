@@ -2,7 +2,7 @@ import { Post } from "@/lib/model";
 import { connectToDb } from "@/lib/util";
 import { NextResponse } from "next/server";
 
-export const GET = async (request, { params }) => {
+export const GET = async ( { params }) => {
   const { slug } = params;
   try {
     connectToDb();
@@ -16,7 +16,7 @@ export const GET = async (request, { params }) => {
   }
 };
 
-export const DELETE = async (request, { params }) => {
+export const DELETE = async ( { params }) => {
   const { slug } = params;
   try {
     connectToDb();
