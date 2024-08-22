@@ -63,7 +63,7 @@ const Links = () => {
       </button> */}
       {open && (
         <div className={styles.mobileLinks}>
-          {links.map((link, index) => (
+          {links.map((link) => (
             <NavLink item={link} key={link.path} />
           ))}
         </div>
