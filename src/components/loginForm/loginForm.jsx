@@ -5,7 +5,7 @@ import styles from "./loginForm.module.css";
 import { useFormState } from "react-dom";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-const loginForm = () => {
+const LoginForm = () => {
   const [state, formAction] = useFormState(login, undefined);
   const [formData, setFormData] = useState({ username: "", password: "" });
   const [message, setMessage] = useState(""); // To display success or error messages
@@ -67,4 +67,4 @@ const loginForm = () => {
   );
 };
 
-export default loginForm;
+export default LoginForm;
