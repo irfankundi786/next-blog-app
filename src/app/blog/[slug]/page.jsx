@@ -5,21 +5,21 @@ import PostUser from "@/components/postUser/postUser";
 import { getPost } from "@/lib/data";
 
 ///FETCH DATA WITH AN API
-const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/blog/${slug}`);
+// const getData = async (slug) => {
+//   const res = await fetch(`http://localhost:3000/api/blog/${slug}`);
 
-  if (!res.ok) {
-    throw new Error("Something went wrong");
-  }
+//   if (!res.ok) {
+//     throw new Error("Something went wrong");
+//   }
 
-  return res.json();
-};
+//   return res.json();
+// };
 const SinglePostPage = async ({ params }) => {
   const { slug } = params;
   console.log(slug);
-  // const post = await getPost(slug);
-  const post = await getData(slug);
-  console.log(post);
+  const post = await getPost(slug);
+  //const post = await getData(slug);
+  console.log("get new post by slug = " + post);
   return (
     <div className={styles.container}>
       {post.img && (
